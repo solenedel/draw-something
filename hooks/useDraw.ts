@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-export const useDraw = () => {
+export const useDraw = (
+  onDraw: ({ context, currentPoint, prevPoint }: Draw) => void
+) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const handler = (e: MouseEvent) => {
